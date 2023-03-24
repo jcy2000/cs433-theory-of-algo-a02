@@ -318,18 +318,19 @@ namespace _PA2
                     + GreedyIntervals.color(intervals));
         }
 
-        public static void Main(String[] args)
+        public static void martin()
         {
-            Console.Clear();
-            testPartition();
-            testRandomizedQuickSort();
-            testRandomizedSelect();
-            testMedianOfMediansSelect();
+            // For some reason, the Console.Clear() throws an unhandled exception. "System.IO.IOException: The handle is invalid."
+            // Console.Clear();
+            // testPartition();
+            // testRandomizedQuickSort();
+            // testRandomizedSelect();
+            // testMedianOfMediansSelect();
             testStringSorter();
-            testHuffmanEncoder();
-            testHuffmanDecoder();
-            testIntervalScheduling();
-            testIntervalColoring();
+            // testHuffmanEncoder();
+            // testHuffmanDecoder();
+            // testIntervalScheduling();
+            // testIntervalColoring();
         }
     }
 }

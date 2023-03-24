@@ -37,6 +37,7 @@ namespace _PA2
 
         private BinaryTreeNode buildTree()
         {   // complete this method
+            return null;
         }
 
         private void createTable(BinaryTreeNode node, String encoding)

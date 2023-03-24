@@ -186,7 +186,7 @@ namespace _PA2
             }
         }
 
-        public static void Main(String[] args)
+        public static void testTime(String[] args)
         {
             Console.Clear();
             compareSorting();

@@ -6,6 +6,7 @@ namespace _PA2
     {
         public static String decode(String encodedMsg, Hashtable encodingToCharMapping)
         {   // complete this method
+            return null;
         }
     }
 }

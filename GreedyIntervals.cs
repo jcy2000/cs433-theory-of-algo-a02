@@ -24,10 +24,12 @@ namespace _PA2
 
 		public static List<Interval> schedule(List<Interval> intervals)
 		{ // complete this method
+			return null;
 		}
 
 		public static int color(List<Interval> intervals)
 		{ // complete this method
+			return 0;
 		}
 	}
 }
