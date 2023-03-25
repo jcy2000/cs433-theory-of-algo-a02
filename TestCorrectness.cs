@@ -326,11 +326,11 @@ namespace _PA2
             // testRandomizedQuickSort();
             // testRandomizedSelect();
             // testMedianOfMediansSelect();
-            testStringSorter();
+            // testStringSorter();
             // testHuffmanEncoder();
             // testHuffmanDecoder();
-            // testIntervalScheduling();
-            // testIntervalColoring();
+            testIntervalScheduling();
+            testIntervalColoring();
         }
     }
 }
