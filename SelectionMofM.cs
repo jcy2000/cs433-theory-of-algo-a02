@@ -32,26 +32,30 @@ namespace _PA2
 			}
 			
 			// Create the median array
-			int[] median = new int[(int) Math.Ceiling((right - left) / 5.0)];
+			int[] median = new int[(int) Math.Ceiling((right - left + 1) / 5.0)];
 			int medianCounter = 0;
 
 			// Fill the median array
-			for(int i = left; i < right; i += 5) {
-				if(i + 4 > right) {
-					// The group's size is less than 5, so grab the first element
-					median[medianCounter] = select(arr, i, arr.Length - 1, 0);
-				}
-				else {
-					// The group is size of 5, so grab the middle element
-					median[medianCounter] = select(arr, i, i + 4, 3);
-				}
+			for(int i = left; i < right + 1; i += 5) {
+				// The group is size of 5, because the group's last element is before index of right
+				int[] temp;
 
+				// If there's enough room for a group of size 5, then make it. Else make a group of size less than 5.
+				temp = (i + 4 <= right) ? new int[5]: new int[right - i + 1];
+
+				// Fill temp
+				for(int j = i; j < i + temp.Length; j++)
+					temp[j - i] = arr[j];
+
+				// Insertion sort temp array
+				insertionSort(temp, 0, temp.Length - 1);
+
+				median[medianCounter] = temp[temp.Length / 2];
 				medianCounter++;
 			}
 
 			// Recurse on the static median array to find the median of the medians
-
-			int medianOfMedians = select(median, 0, median.Length - 1, median.Length / 2 + 1);
+			int medianOfMedians = select(median, 0, median.Length - 1, median.Length / 2);
 
 			/* Partitioning the array
 			REMINDER THAT PARTITION "SPLITS" THE ARRAY INTO 3 DIFFERENT PARTS. REFER TO IT IF NEED BE (line 42 of Partition.cs).*/
@@ -59,6 +63,7 @@ namespace _PA2
 			int lowerPartitionIndex = partitionIndices[0];
 			int upperPartitionIndex = partitionIndices[1];
 
+			// Do the comparisons and recurse accordingly.
 			if(k >= lowerPartitionIndex - left + 1 && k <= upperPartitionIndex - left + 1)
                 return medianOfMedians;
             else if(k < lowerPartitionIndex - left + 1) {

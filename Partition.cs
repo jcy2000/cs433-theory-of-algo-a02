@@ -42,23 +42,24 @@ namespace _PA2
 			/* Organize the array into 3 parts.| 1st part: All #'s < pivot.| 2nd part: All #'s == pivot | 3rd pivot: All #'s > pivot
 			We utilize partitionIndex, to make it easier for us. Also gonna reuse variables i and j, because reusability is good.*/
 			i = left; j = partitionIndex - 1;
-            int pivotOccurences = 0;
+            int pivotOccurences = 1;
 
             while (i < j) {
                 if(array[i] != pivot)
                     i++;
-                else if(array[j] == pivot)
+                else if(array[j] == pivot) {
+                    pivotOccurences++;
                     j--;
+                }
                 else {
                     swap(array, i, j);
+                    pivotOccurences++;
                     i++;
                     j--;
                 }
             }
-
-            for(int k = partitionIndex; k >= 0; k--)
-                if(array[k] == pivot)
-                    pivotOccurences++;
+            if(array[i] == pivot)
+                pivotOccurences++;
 
             // Returns an array of size 2 that holds the lower partition index and upper partition index
             int[] partitionArray = {partitionIndex - pivotOccurences + 1, partitionIndex};

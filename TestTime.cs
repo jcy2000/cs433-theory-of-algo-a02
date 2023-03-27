@@ -186,9 +186,10 @@ namespace _PA2
             }
         }
 
-        public static void testTime(String[] args)
+        public static void testTime()
         {
-            Console.Clear();
+            // For some reason, the Console.Clear() throws an unhandled exception. "System.IO.IOException: The handle is invalid."
+            // Console.Clear();
             compareSorting();
             compareSelection();
             testStringSorter();

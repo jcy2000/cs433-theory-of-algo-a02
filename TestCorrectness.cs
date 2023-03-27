@@ -136,6 +136,9 @@ namespace _PA2
 
             Console.WriteLine("\n****************** Sorting Strings ******************\n");
             String[] strings = { "abc", "xyzw", "xyzab", "abcdx", "wxcdx", "abcxy", "aac", "wxcdx", "abcx", "abc" };
+            // String[] strings = {"l", "o", "w", "n", "x", "o", "j", "b", "n", "m", "n", "m", "a", "i", "r", "z", "m", "v", "a",
+            //            "g", "x", "s", "l", "w", "w", "p", "p", "n", "f", "o", "j", "i", "n", "m", "p", "j", "j", "d",
+            //            "h", "c", "z", "l", "a", "v", "d", "e", "r", "a", "k", "z", "e"};
             Console.Write("Original order of strings: ");
             printArray(strings);
             StringSorter.radixSort(strings, strings.Length);
@@ -273,21 +276,21 @@ namespace _PA2
         private static void testIntervalScheduling()
         {
             Console.WriteLine("\n****************** Interval Scheduling ******************\n");
-            List<Interval> intervals = readIntervals("intervalScheduling1.txt");
+            List<Interval> intervals = readIntervals("resources//intervalScheduling1.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.Write("Selected intervals are: ");
             printIntervals(GreedyIntervals.schedule(intervals));
 
             Console.WriteLine();
-            intervals = readIntervals("intervalScheduling2.txt");
+            intervals = readIntervals("resources//intervalScheduling2.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.Write("Selected intervals are: ");
             printIntervals(GreedyIntervals.schedule(intervals));
 
             Console.WriteLine();
-            intervals = readIntervals("intervalScheduling3.txt");
+            intervals = readIntervals("resources//intervalScheduling3.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.Write("Selected intervals are: ");
@@ -297,21 +300,21 @@ namespace _PA2
         private static void testIntervalColoring()
         {
             Console.WriteLine("\n****************** Interval Coloring ******************\n");
-            List<Interval> intervals = readIntervals("intervalColoring1.txt");
+            List<Interval> intervals = readIntervals("resources//intervalColoring1.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.WriteLine("Number of colors needed to paint the interval with no overlapping colors: "
                     + GreedyIntervals.color(intervals));
 
             Console.WriteLine();
-            intervals = readIntervals("intervalColoring2.txt");
+            intervals = readIntervals("resources//intervalColoring2.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.WriteLine("Number of colors needed to paint the interval with no overlapping colors: "
                     + GreedyIntervals.color(intervals));
 
             Console.WriteLine();
-            intervals = readIntervals("intervalColoring3.txt");
+            intervals = readIntervals("resources//intervalColoring3.txt");
             Console.Write("The intervals are: ");
             printIntervals(intervals);
             Console.WriteLine("Number of colors needed to paint the interval with no overlapping colors: "
@@ -326,11 +329,11 @@ namespace _PA2
             // testRandomizedQuickSort();
             // testRandomizedSelect();
             // testMedianOfMediansSelect();
-            // testStringSorter();
+            testStringSorter();
             // testHuffmanEncoder();
             // testHuffmanDecoder();
-            testIntervalScheduling();
-            testIntervalColoring();
+            // testIntervalScheduling();
+            // testIntervalColoring();
         }
     }
 }

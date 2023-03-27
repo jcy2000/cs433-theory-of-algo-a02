@@ -19,7 +19,7 @@ namespace _PA2
 			// Go through the count sort rounds, starting with the last character.
 
 			int currentRound = 1;
-			while(maxLength - currentRound > 0) {
+			while(maxLength - currentRound + 1 > 0) {
 				for(int i = 0; i < n; i++) {
 					if(maxLength - currentRound >= strings[i].Length)
 						digits[i] = 0;
