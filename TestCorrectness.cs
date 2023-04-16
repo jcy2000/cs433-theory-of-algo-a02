@@ -325,15 +325,15 @@ namespace _PA2
         {
             // For some reason, the Console.Clear() throws an unhandled exception. "System.IO.IOException: The handle is invalid."
             // Console.Clear();
-            // testPartition();
-            // testRandomizedQuickSort();
-            // testRandomizedSelect();
-            // testMedianOfMediansSelect();
+            testPartition();
+            testRandomizedQuickSort();
+            testRandomizedSelect();
+            testMedianOfMediansSelect();
             testStringSorter();
-            // testHuffmanEncoder();
-            // testHuffmanDecoder();
-            // testIntervalScheduling();
-            // testIntervalColoring();
+            testHuffmanEncoder();
+            testHuffmanDecoder();
+            testIntervalScheduling();
+            testIntervalColoring();
         }
     }
 }
